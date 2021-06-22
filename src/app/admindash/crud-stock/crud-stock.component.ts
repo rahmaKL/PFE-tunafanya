@@ -35,7 +35,7 @@ export class CrudStockComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   produits;
   datatable: any;
-  editID:string;  deleteId: string;
+  editID:string;  deleteId: string; createID:string;
   dtElement: any;
   is_deleted: boolean = false;
 
@@ -150,14 +150,15 @@ export class CrudStockComponent implements OnInit {
 
 
 //add
-onSubmit(f: NgForm) {
+onSubmit(f: NgForm ) {
   let id =localStorage.getItem("id");
-  const url = `http://localhost:3000/produit/createP/${id}`;
-  this.http.post(url, f.value,  )
-    .subscribe((result) => {
-      this.ngOnInit(); //reload the table
-      });
-  this.modalService.dismissAll(); //dismiss the modal
+  this.productService.createProduct(id)
+  .subscribe((response) => {
+    console.log(response);
+    this.produits = response;
+    this.ngOnInit();
+    this.modalService.dismissAll();
+  });
 }
 
   open(content) {

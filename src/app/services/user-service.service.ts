@@ -54,10 +54,8 @@ export class UserServiceService {
 
   valid(id: number) {
     const url = `http://localhost:3000/file/valide/${id}`;
-    return this.http.put(url, { headers: this.headerrs });
+    return this.http.put(url, { headers: this.headerrs }, {withCredentials: true});
   }
-
-
 
   downfile(fileName: Blob) {
     const url = `http://localhost:3000/file/downfile/${fileName}`;

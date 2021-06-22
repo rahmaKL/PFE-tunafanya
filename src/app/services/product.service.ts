@@ -24,14 +24,17 @@ export class ProductService {
   //  updateProduct(id: number): Observable<any>{
   //   return this.http.get(`http://localhost:3000/produit/updateP/${id}`);
   //  }
-  
+
   updateProduct(id: number) {
     const url = `${this.api_prefix}/updateP/${id}`;
     return this.http.put(url, { headers: this.headerrs });
   }
 
 
-
+  createProduct(id: string) {
+    const url = `${this.api_prefix}/createP/${id}`;
+    return this.http.post(url, { headers: this.headerrs },{withCredentials:true});
+  }
 
 
 

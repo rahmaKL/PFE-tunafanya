@@ -116,6 +116,30 @@ router.put("/updateAdmin/:id", function (req, res) {
     }
   });
 });
+//update user
+
+router.put("/updateUser/:id", function (req, res) {
+  let id = req.params.id;
+;
+ User.findByPk(id).then((user) => {
+    try {
+      let { email,role} = req.body;
+      user
+        .update({
+          email,role,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })
+        .then((user) =>
+          prepareResponse(res, 200, { success: true }, "application/json")
+        )
+        .catch((error) => console.log(error));
+    } catch (error) {
+      console.log(error);
+      prepareResponse(res, 500, { success: false }, "application/json");
+    }
+  });
+});
 //DELETE USER
 
 router.get("/delete/:id", function (req, res) {
