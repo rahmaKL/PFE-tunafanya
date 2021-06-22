@@ -1,0 +1,55 @@
+
+
+<table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered" cellspacing="0" width="100%">
+  <thead>
+
+    <tr>
+
+      <th>Nom de livreur</th>
+      <th>Nom de fichier</th>
+      <th>Url</th>
+
+      <th colspan="3" width="6%">
+        Action
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doc of docs">
+      <td><span>{{ doc.livreur.name }}</span></td>
+      <td><span>{{ doc.libelle }}</span></td>
+      <td><span>backend/uploads/{{ doc.url_doc }}</span>  </td>
+      <td>  <ng-template #contentShow let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Preview</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+        
+          <img src= "../assets/uploads/{{doc.libelle}}" width="300px">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+        </div>
+      </ng-template>
+
+    </td>
+
+
+      <td><button class="btn btn-warning" (click)="onValid(doc.id)">
+          <i class="fa fa-check"></i> Valider </button> </td>
+
+          <td><button   (click)="open(contentShow , doc.id)" class="btn btn-primary btn-small "> <i class="fa fa-search"></i>
+            Afficher</button>
+        </td>
+
+    </tr>
+  </tbody>
+
+</table>
+
+
+
+
