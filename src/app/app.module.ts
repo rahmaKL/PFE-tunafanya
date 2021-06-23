@@ -39,15 +39,7 @@ import { CrudUserComponent } from './Admindash/crud-user/crud-user.component';
 import { AuthService } from './services/auth.service';
 import { AdminGuard } from './admin.guard';
 import { ClientGuard } from './client.guard';
-import { ProductComponent } from './product/product.component';
-import { Prod1Component } from './product/prod1/prod1.component';
-import { Prod2Component } from './product/prod2/prod2.component';
-import { Prod3Component } from './product/prod3/prod3.component';
-import { Prod4Component } from './product/prod4/prod4.component';
-import { Prod5Component } from './product/prod5/prod5.component';
-import { Prod6Component } from './product/prod6/prod6.component';
-import { Prod7Component } from './product/prod7/prod7.component';
-import { Prod8Component } from './product/prod8/prod8.component';
+
 import { NgxSpinnerModule } from "ngx-spinner";
 // import { AngularFileViewerModule } from '@taldor-ltd/angular-file-viewer';
 import { CmdeComponent } from './admindash/cmde/cmde.component';
@@ -113,14 +105,7 @@ const Routes: Routes = [
 
   { path: 'forgotpwd/:id', component: ForgotPwdComponent },
   { path: 'changepwd', component: ChangepwdComponent },
-  { path: 'prod1', component: Prod1Component },
-  { path: 'prod2', component: Prod2Component },
-  { path: 'prod3', component: Prod3Component },
-  { path: 'prod4', component: Prod4Component },
-  { path: 'prod5', component: Prod5Component },
-  { path: 'prod6', component: Prod6Component },
-  { path: 'prod7', component: Prod7Component },
-  { path: 'prod8', component: Prod8Component }
+
 
 
 
@@ -141,19 +126,9 @@ const Routes: Routes = [
     TestComponent,
     AdmindashComponent,
     CrudUserComponent,
-    ProductComponent,
-    Prod1Component,
-    Prod2Component,
-    Prod3Component,
-    Prod4Component,
-    Prod5Component,
-    Prod6Component,
-    Prod7Component,
-    Prod8Component,
     CrudSScatComponent,
     CmdeComponent,
     CrudStockComponent,
-
     CrudCategorieComponent,
     LivreurdashComponent,
     UploadFilesComponent,

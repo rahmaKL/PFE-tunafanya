@@ -5,7 +5,6 @@ import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ProductService } from '../../services/product.service';
 import {  EventEmitter } from '@angular/core';
-//
 
 export class Produit {
   constructor(
