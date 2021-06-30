@@ -1,6 +1,6 @@
 <div class="border">
     <button class="btn btn-md btn-outline-primary" (click)="open(content)">
-      <i class="fa fa-product"></i>Add new categorie</button>
+      <i class="fa fa-product"></i>Ajouter categorie</button>
   </div>
 
 
@@ -49,19 +49,13 @@
    <router-outlet></router-outlet>
    <ng-template #content let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">New categorie</h4>
+      <h4 class="modal-title" id="modal-basic-title">Ajouter une categorie</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
       <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-        <!-- <div class="form-group">
-          <label for="id">ID</label>
-          <div class="input-group">
-            <input id="id" class="form-control" name="id" ngModel>
-          </div>
-        </div> -->
         <div class="form-group">
           <label for="nom_cat">Nom catégorie</label>
           <div class="input-group">
@@ -76,31 +70,31 @@
         </div>
 
         <div class="border text-center">
-          <button data-dismiss="modal" class="btn btn-info">Submit</button>
+          <button data-dismiss="modal" class="btn btn-info">Enregistrer</button>
           </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Fermer</button>
     </div>
   </ng-template>
 
 
   <ng-template #contentDelete let-modal >
     <div class="modal-header">
-      <h4 class="modal-title">Confirm Delete</h4>
+      <h4 class="modal-title">Confirmer la suppression</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-      <h2>Are you sure you want to delete this record.</h2>
+      <h4>Êtes-vous sûr de vouloir supprimer cette catégorie?</h4>
       <div class="border text-center" >
-        <button data-dismiss="modal" class="btn btn-danger" *ngIf="!is_deleted" (click)="onDelete()">Yes, Delete!</button>
+        <button data-dismiss="modal" class="btn btn-danger" *ngIf="!is_deleted" (click)="onDelete()">Oui, Supprimer!</button>
       </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Annuler</button>
     </div>
   </ng-template>
 
@@ -109,7 +103,7 @@
 
   <ng-template #contentDetails let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Categorie's Details</h4>
+      <h4 class="modal-title" id="modal-basic-title">Details</h4>
       <button type="button" class="close" aria-label="Close" aria-hidden="true" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -148,34 +142,25 @@
           <label for="updated" for="dateOfBirth">UpdatedAt</label>
           <div class="input-group">
             <input id="updated" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-            <!-- <div class="input-group-append">
-              <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-            </div> -->
           </div>
         </div>
 
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Fermer</button>
     </div>
   </ng-template>
 
   <ng-template #contentEdit let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" >Edit Catégorie </h4>
+      <h4 class="modal-title" >Modifier Catégorie </h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
       <form [formGroup]="editForm" novalidate>
-        <!-- <div class="form-group">
-          <label for="id">ID</label>
-          <div class="input-group">
-            <input  class="form-control" formControlName="id">
-          </div>
-        </div> -->
         <div class="form-group">
           <label for="nom_cat">nom_cat</label>
           <div class="input-group">
@@ -189,11 +174,11 @@
           </div>
         </div>
         <div class="border text-center">
-          <button data-dismiss="modal" class="btn btn-info" (click)="onSave()" >Save Changes</button>
+          <button data-dismiss="modal" class="btn btn-info" (click)="onSave()" >Sauvegarder </button>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Annuler</button>
     </div>
   </ng-template>

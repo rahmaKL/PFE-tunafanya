@@ -35,7 +35,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { TestComponent } from './test/test.component';
 import { AdmindashComponent } from './admindash/admindash.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CrudUserComponent } from './Admindash/crud-user/crud-user.component';
+import { CrudUserComponent } from './supdash/crud-user/crud-user.component';
 import { AuthService } from './services/auth.service';
 import { AdminGuard } from './admin.guard';
 import { ClientGuard } from './client.guard';
@@ -65,6 +65,7 @@ const Routes: Routes = [
   {
     path: 'sup', component: SupdashComponent,
     children: [
+      { path: 'users', component: CrudUserComponent },
       {path: 'categorie', component: CrudCategorieComponent,
         children: [{ path: 'ss_categorie', component: CrudSScatComponent}]
       },
@@ -79,7 +80,7 @@ const Routes: Routes = [
   {
     path: 'admin', component: AdmindashComponent,
     children: [
-      { path: 'users', component: CrudUserComponent },
+ 
       { path: 'stock', component: CrudStockComponent },
       { path: 'cmde', component: CmdeComponent } ,
       { path: 'notif', component: NotifLivComponent } ,

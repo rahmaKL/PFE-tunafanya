@@ -326,7 +326,7 @@ router.post("/forgotpwd", function (req, res, next) {
         emailSender.send({
           template: "forgetpwd",
           message: {
-            to: "rahma.kalai0@gmail.com",
+            to: "wiemk08@gmail.com",
             attachments: [
               {
                 path: `${__dirname}/../emails/forgetpwd/images/daijara.png`,
