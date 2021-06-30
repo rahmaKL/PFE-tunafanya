@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   };
   isLoggedIn = false;
   isLoginFailed = false;
-  errorMessage = '';
+  errorMessage = "adresse email n'existe pas";
   roles: string[] = [];
 
 
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
 
 
 
-    // this.onSave()
+    
   }
 
 
@@ -78,10 +78,10 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/liv/upload'])
         } else if (localStorage.getItem("role") === "Administrateur") {
 
-          this.router.navigate(['/admin/users'])
+          this.router.navigate(['/admin/stock'])
         } else if (localStorage.getItem("role") === "Sup_Administrateur") {
 
-          this.router.navigate(['/sup/categorie'])
+          this.router.navigate(['/sup/users'])
         } else if (localStorage.getItem("role") === "Client") {
 
           this.router.navigate(['/profil'])
