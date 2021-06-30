@@ -84,9 +84,9 @@ const Routes: Routes = [
       { path: 'stock', component: CrudStockComponent },
       { path: 'cmde', component: CmdeComponent } ,
       { path: 'notif', component: NotifLivComponent } ,
-      { path: 'profil', component: AdminProfilComponent, children: [
+      { path: 'profil', component: AdminProfilComponent},
       { path: 'edit', component: EditComponent }
-    ]},
+    
 ]
 },
   { path: 'login', component: LoginComponent },
