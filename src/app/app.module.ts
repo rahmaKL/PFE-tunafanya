@@ -38,8 +38,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CrudUserComponent } from './supdash/crud-user/crud-user.component';
 import { AuthService } from './services/auth.service';
 import { AdminGuard } from './admin.guard';
+import { SupGuard } from './sup.guard';
 import { ClientGuard } from './client.guard';
-
+import { LivreurGuard } from './livreur.guard';
 import { NgxSpinnerModule } from "ngx-spinner";
 // import { AngularFileViewerModule } from '@taldor-ltd/angular-file-viewer';
 import { CmdeComponent } from './admindash/cmde/cmde.component';
@@ -63,7 +64,7 @@ const Routes: Routes = [
   { path: '', component: CatalogComponent },
   { path: 'test', component: TestComponent },
   {
-    path: 'sup', component: SupdashComponent,
+    path: 'sup', component: SupdashComponent,canActivate:[SupGuard],
     children: [
       { path: 'users', component: CrudUserComponent },
       {path: 'categorie', component: CrudCategorieComponent,
@@ -78,7 +79,7 @@ const Routes: Routes = [
   },
 
   {
-    path: 'admin', component: AdmindashComponent,
+    path: 'admin', component: AdmindashComponent, canActivate:[AdminGuard],
     children: [
  
       { path: 'stock', component: CrudStockComponent },
@@ -93,10 +94,11 @@ const Routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
-  {path: 'profil', component: ProfilComponent},
+  {path: 'profil', component: ProfilComponent , canActivate:[ClientGuard]},
 
   {
-    path: 'liv', component: LivreurdashComponent, children: [
+    path: 'liv', component: LivreurdashComponent, canActivate:[LivreurGuard] ,
+    children: [
       { path: 'upload', component: UploadFilesComponent },
       { path: 'cmd', component: CrudCmdeComponent },
       { path: 'profil', component: LivProfilComponent }]
@@ -104,8 +106,8 @@ const Routes: Routes = [
 
 
 
-  { path: 'forgotpwd/:id', component: ForgotPwdComponent },
-  { path: 'changepwd', component: ChangepwdComponent },
+  { path: 'forgotpwd/:id', component: ForgotPwdComponent, canActivate:[ClientGuard]},
+  { path: 'changepwd', component: ChangepwdComponent,canActivate:[ClientGuard] },
 
 
 
@@ -181,7 +183,7 @@ const Routes: Routes = [
 
 
   ],
-  providers: [UserServiceService,
+  providers: [UserServiceService,AdminGuard,LivreurGuard,SupGuard,ClientGuard,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

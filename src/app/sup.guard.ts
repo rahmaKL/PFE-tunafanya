@@ -2,23 +2,17 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './services/auth.service';
-
-
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class ClientGuard implements CanActivate {
- 
+export class SupGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) { }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
       if (this.auth.isLoggedIn()){
         let role =localStorage.getItem("role");
-         if (role==="Client"){
+         if (role==="Sup_administrateur"){
          return true;
          }
          else{
@@ -27,5 +21,5 @@ export class ClientGuard implements CanActivate {
          }
  }
   }
-
+  
 }

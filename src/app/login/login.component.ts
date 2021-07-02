@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
         } else if (localStorage.getItem("role") === "Administrateur") {
 
           this.router.navigate(['/admin/profil'])
-        } else if (localStorage.getItem("role") === "Sup_Administrateur") {
+        } else if (localStorage.getItem("role") === "Sup_administrateur") {
 
           this.router.navigate(['/sup/users'])
         } else if (localStorage.getItem("role") === "Client") {
