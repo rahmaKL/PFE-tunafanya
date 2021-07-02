@@ -65,8 +65,21 @@ router.get("/getUser/:id", async function (req, res, next) {
 
   prepareResponse(res, 200, user, "application/json");
 });
+//GET ADMIN
+router.get("/getadmin/:id", async function (req, res, next) {
+  let id = req.params.id;
+  Admin.findByPk(id,{attributes:["id","nom_boutique", "tel", "adresse"],
+  where: { id_user: req.params.id  } })
+
+  .then((admin) =>
+  prepareResponse(res, 200, admin, "application/json")
+)
+.catch((error) => console.log(error));
+});
 
 //GET ALL USERS
+
+
 
 router.get("/getAll", function (req, res, next) {
   User.findAll({

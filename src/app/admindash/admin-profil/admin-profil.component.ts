@@ -11,7 +11,7 @@ import { UserServiceService } from './../../services/user-service.service';
   styleUrls: ['./admin-profil.component.scss']
 })
 export class AdminProfilComponent implements OnInit {
-
+admin:string;
  
   constructor(  private router:Router,
     private formBuilder: FormBuilder,
@@ -23,7 +23,13 @@ export class AdminProfilComponent implements OnInit {
     
   }
 
-
+  // getAdmin() {
+  //   this.http.get(`http://localhost:3000/users/getAdmin/${id}`)
+  //     .subscribe(response => {
+  //       console.log(response);
+  //      this.admin = response as any;
+  //     });
+  // }
 
 
 }

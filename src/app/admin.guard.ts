@@ -17,16 +17,15 @@ constructor(private auth :AuthService,private router: Router){}
       if (this.auth.isLoggedIn()){
        let role =localStorage.getItem("role");
         if (role==="Administrateur"){
-
-        return this.router.parseUrl("/admin");
-
+        return true;
         }
-
-      }else{
-        
-  window.alert('You don\'t have permission to view this page');
-  return this.router.parseUrl("/");
+        else{
+  window.alert('Vous n\'êtes pas autorisé à afficher cette page');
+  return this.router.parseUrl("/login");
+        }
 }
+
+
 }
 
 }
