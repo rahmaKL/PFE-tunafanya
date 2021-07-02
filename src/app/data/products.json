@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category": 1,
+    "name": "Pc Portable HP OMEN 7-cb1003nk i9",
+    "price": "7 899",
+    "image": "/assets/img/products/hp.jpg",
+    "description": "Ecran 17.3''  FHD 144Hz  (1920 x 1080) - Processeur: Intel Core i9-108855H (2.4 GHz Up to 5.3 GHz, 16 Mo de mémoire cache, Octa-Core) - Système d'exploitation: Windows 10 Home - Mémoire RAM: 32Go - Disque Dur: 2To + 2x 512 Go SSD - Carte Graphique: NVIDIA GeForce RTX 2080 Super (8Go de mémoire GDDR6 dédiée) avec Wifi, Bluetooth et Thunderbolt - Clavier Rétroéclairé - Garantie: 1 an"
+  },
+  {
+    "id": 2,
+    "category": 1,
+    "name": "Pc Portable LENOVO LEGION Y540 i7",
+    "price": "3 929",
+    "image": "/assets/img/products/lenovo.jpg",
+    "description": "Ecran 15.6\" FHD IPS 144 Hz - Processeur: Intel Core i7-9750H (2.6 GHz up to 4.5 GHz Turbo, 12 Mo de mémoire cache, Hexa-Core) - FreeDos - Mémoire RAM: 24 Go DDR4 - Disque dur: 2 To HDD + 256 Go SSD - Carte graphique: NVIDIA GeForce RTX 2060 (6 Go  de mémoire dédiée GDDR6) avec Wi-Fi et Bluetooth - Clavier rétroéclairé - Poids: 2,3 kg - Couleur: Noir - Garantie: 2 ans"
+  },
+  {
+    "id": 3,
+    "category": 1,
+    "name": "Pc Portable HUAWEI MateBook XPRO i7 ",
+    "price": "5 599",
+    "image": "/assets/img/products/huawei.jpg",
+    "description": "Ecran 13.9\" 3K (3000 x 2000px) Tactile - Processeur:  Intel Core i7-10510U ( 1.8 GHz up to 4.9 GHz, 8 Mo de mémoire cache, Quad-Core) - Windows 10 Home - Mémoire RAM: 16 Go - Disque Dur: 1 To SSD - Carte Graphique:  NVIDIA GeForce MX250 (2Go de mémoire dédiée ) avec WiFi,Bluetooth & NFC - Bouton d'alimentation d'empreinte digitale - Caméra intégré au clavier entre F6 & F7 - Poids: 1.33 kg - Couleur: Gris - Garantie: 1 an"
+  },
+  {
+    "id": 4,
+    "category": 1,
+    "name": "PC Portable LENOVO IdeaPad C340-14API RYZEN3",
+    "price": "1 799",
+    "image": "/assets/img/products/ideapad.jpg",
+    "description": "Ecran 14\" Tactile FULL HD - Processeur: AMD Ryzen 3 3200U ( 2.6 GHz up to 3.5 GHz, 4 Mo, Dual-Core) - Système d'exploitation: Windows 10 Famille - Mémoire RAM: 4 Go DDR4 - Disque Dur: 256 Go SSD - Carte Graphique: AMD Radeon Vega 3 intégrés avec  Wifi, Bluetooth - Clavier Rétroéclairé - Couleur: Noir - Garantie: 1 an"
+  },
+  {
+    "id": 5,
+    "category": 2,
+    "name": "Cafetière Verona TAURUS",
+    "price": "65",
+    "image": "/assets/img/products/cofee-machine.jpg",
+    "description": "Cafetière Verona TAURUS - Puissance: 600W - 6 Tasses - Reservoir en verre avec indicateur de capacité de tasse - Plaque chauffante - Système de goutte à goutte - Filtre permanent amovible - système d'arrêt automatique - Couleur: Noir - Garantie: 1 an"
+  },
+  {
+    "id": 6,
+    "category": 2,
+    "name": "Réfrigérateur SHARP SJ-BH320-HS2",
+    "price": "1 199",
+    "image": "/assets/img/products/fridge.jpg",
+    "description": "Réfrigérateur SHARP Combiné - Système de refroidissement: De Frost - Volume Brut: 320 Litres - Nombre De Portes: 2 Portes - Revêtement en aluminium - Étagère Ajustable - Fonction de congélation rapide - Dimensions: 550 X 580 X 1770 mm - Couleur: Inox - Garantie: 3 ans"
+  }
+]

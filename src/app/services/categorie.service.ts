@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { any } from 'sequelize/types/lib/operators';
-import { param } from 'express-validator';
+// @ts-ignore
+import categories from '../data/categories.json';
+
+
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,13 +14,18 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CategorieService {
+  categories;
   api_prefix: string = "http://localhost:3000/categorie";
   private headerrs = new HttpHeaders({'Content-Type': 'application/json'});
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.categories = categories;
+  }
 
 
 
-
+  getCategories(): [] {
+    return this.categories;
+  }
 
   deleteCat(id: string): Observable<any>{
     return this.http.get(`http://localhost:3000/categorie/delete/${id}`);
