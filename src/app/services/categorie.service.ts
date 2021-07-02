@@ -5,14 +5,12 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import categories from '../data/categories.json';
 
 
-
-
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class CategorieService {
   categories;
   api_prefix: string = "http://localhost:3000/categorie";
