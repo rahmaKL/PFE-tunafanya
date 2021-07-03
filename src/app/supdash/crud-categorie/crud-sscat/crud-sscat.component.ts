@@ -10,8 +10,8 @@ export class Sous_cat {
     public is_deleted: boolean,
     public createdAt: string,
     public updatedAt: string,
-  
-  ) {} 
+
+  ) {}
 }
 @Component({
   selector: 'app-crud-sscat',
@@ -73,7 +73,7 @@ getssCategorie(){
   document.getElementById('nom_ss_cat').setAttribute('value', categories.nom_ss_cat);
   document.getElementById('created').setAttribute('value', categories.createdAt);
   document.getElementById('updated').setAttribute('value', categories.updatedAt);
- 
+
 }
 
 
@@ -127,7 +127,8 @@ onSave() {
 
 //add
 onSubmit(f: NgForm) {
-  const url = 'http://localhost:3000/sous_cat/create';
+  // let id =localStorage.getItem("id");
+  const url = `http://localhost:3000/sous_cat/create/`;
   this.http.post(url, f.value)
     .subscribe((result) => {
       this.ngOnInit(); //reload the table
@@ -142,7 +143,7 @@ onSubmit(f: NgForm) {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-  
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

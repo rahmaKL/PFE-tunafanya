@@ -125,44 +125,34 @@ router.get("/getP/:id",  function (req, res, next) {
 });
 });
 // create Produit
-router.post("/createP/:id", verifyToken, function (req, res, next) {
+router.post("/createP/:id", function (req, res, next) {
   Admin.findOne(
-
     {attributes:["id","nom_boutique","tel"],
     where :
     {id_user:req.params.id}
-
 }).then((admin) => {
 
-  categorie.findOne({attributes:["id","nom_cat", "famille"],
-       where: { id: req.body.id  } }).then((categorie)=>{
   Produit.findOne({
     attributes: ["libelle"],
     where: {
-      libelle: req.body.libelle,
-      id_categorie:categorie.id
-    },
+      libelle: req.body.libelle, },
   })
-    .then(async (pdt) => {
+    .then( (pdt) => {
       if (pdt) {
         const response = {
           success: false,
           message: "Produit already exist !",
         };
-
         prepareResponse(res, 500, response, "application/json");
-
       } else {
         let {  libelle, marque, prix, max_rating, description, quantite } = req.body;
-
-        const produit = await Produit.create({
+        const produit =  Produit.create({
           libelle,
           marque,
           prix,
           max_rating,
           description,
           quantite,
-          id_categorie:categorie.id,
           id_admin:admin.id,
           is_deleted: false,
           createdAt: new Date(),
@@ -180,7 +170,7 @@ router.post("/createP/:id", verifyToken, function (req, res, next) {
         prepareResponse(res, 200, response, "application/json");
       }
     })
-  })
+
 })
     .catch((error) => console.log(error));
 });
@@ -211,7 +201,7 @@ router.post("/uploadPic/:id",verifyToken, function (req, res, next) {
 
 //UPDATE
 
-router.put("/updateP/:id", verifyToken,function (req, res) {
+router.put("/updateP/:id",function (req, res) {
   let id = req.params.id;
   Produit.findByPk(id, { attributes: ["id"] }).then((pdt) => {
     try {
@@ -238,7 +228,7 @@ router.put("/updateP/:id", verifyToken,function (req, res) {
 });
 //DELETE Produit
 
-router.get("/delete/:id", verifyToken,function (req, res) {
+router.get("/delete/:id",function (req, res) {
   let id = req.params.id;
   Produit.findByPk(id, { attributes: ["id"] }).then((produits) => {
     try {

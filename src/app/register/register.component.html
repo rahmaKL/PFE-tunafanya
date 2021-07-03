@@ -9,11 +9,11 @@
 			<i class="fa fa-search"></i>
 		  </button>
 		</div> -->
-   
+
 	  </div>
 	  <img width="20px" height="20px" src="../assets/user.png" alt="">
 	  <a mat-button [routerLink]="'/login'">  S' IDENTIFIER </a>
-    <a [routerLink]="'/cart'" class="btn cart"> 
+    <a [routerLink]="'/cart'" class="btn cart">
 
       <img src="../assets/image.png" width="50px" height="50px" alt="">
       <span>(0)</span> </a>
@@ -59,11 +59,11 @@
 
   <!-- <h4 class="card-title mt-2">Inscrivez vous!</h4> -->
     <hr class="my-4"> <button class="btn btn-lg btn-google btn-block " (click)="loginWithGoogle()"  type="submit">
-      <i class="fab fa-google mr-2"></i> S'inscrire avec Google</button> 
+      <i class="fab fa-google mr-2"></i> S'inscrire avec Google</button>
       <button class="btn btn-lg btn-facebook btn-block " (click)="loginWithFacebook()" type="submit">
         <i class="fab fa-facebook-f mr-2" ></i> S'inscrire avec Facebook</button>
 
-	
+
 </header>
 <article class="card-body">
 <form *ngIf="!isSuccessful"
@@ -128,7 +128,7 @@
 			<option>Livreur</option>
 			<option>Client</option>
       <option>Administrateur</option>
-      <option>Sup_administrateur</option>
+      
 
 		</select>
 	  </div>
