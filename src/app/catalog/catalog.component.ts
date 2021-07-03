@@ -13,7 +13,7 @@ export class Produit {
      public image: string,
     public prix: number,
 
-   ) 
+   )
     {}
 }
 @Component({
@@ -23,13 +23,13 @@ export class Produit {
 })
 export class CatalogComponent implements OnInit {
   @Input() product: any;
-
+pr
   // products:[];
   constructor(private fb: FormBuilder, private http: HttpClient,
     private productService: ProductService,
     private cartService: CartService,
-    private router: Router,) {  
- 
+    private router: Router,) {
+
 }
 
 ngOnInit(): void {
