@@ -28,6 +28,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { FacebookLoginProvider, SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ProfilComponent } from './profil/profil.component';
+// import { ProfilClientComponent } from './profil-client/profil-client.component';
 import { UserServiceService } from './services/user-service.service';
 import { ForgotPwdComponent } from './forgot-pwd/forgot-pwd.component';
 import { ChangepwdComponent } from './changepwd/changepwd.component';
@@ -37,10 +38,10 @@ import { AdmindashComponent } from './admindash/admindash.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CrudUserComponent } from './supdash/crud-user/crud-user.component';
 import { AuthService } from './services/auth.service';
-import { AdminGuard } from './admin.guard';
-import { SupGuard } from './sup.guard';
-import { ClientGuard } from './client.guard';
-import { LivreurGuard } from './livreur.guard';
+import { AdminGuard } from './guard/admin.guard';
+import { SupGuard } from './guard/sup.guard';
+import { ClientGuard } from './guard/client.guard';
+import { LivreurGuard } from './guard/livreur.guard';
 import { NgxSpinnerModule } from "ngx-spinner";
 // import { AngularFileViewerModule } from '@taldor-ltd/angular-file-viewer';
 import { CmdeComponent } from './admindash/cmde/cmde.component';
@@ -58,17 +59,24 @@ import { DocValidComponent } from './supdash/doc-valid/doc-valid.component';
 import { AdminProfilComponent } from './admindash/admin-profil/admin-profil.component';
 import { NotifLivComponent } from './admindash/notif-liv/notif-liv.component';
 import { EditComponent } from './admindash/admin-profil/edit/edit.component';
+import { ClientComponent } from './client/client.component';
+
 
 const Routes: Routes = [
 
   { path: '', component: CatalogComponent },
   { path: 'test', component: TestComponent },
+  // {
+  //   // path: 'client', component: ProfilClientComponent, canActivate: [ClientGuard],
+  //   children: [,]
+  // },
   {
-    path: 'sup', component: SupdashComponent,canActivate:[SupGuard],
+    path: 'sup', component: SupdashComponent, canActivate: [SupGuard],
     children: [
       { path: 'users', component: CrudUserComponent },
-      {path: 'categorie', component: CrudCategorieComponent,
-        children: [{ path: 'ss_categorie', component: CrudSScatComponent}]
+      {
+        path: 'categorie', component: CrudCategorieComponent,
+        children: [{ path: 'ss_categorie', component: CrudSScatComponent }]
       },
 
       { path: 'doc', component: CrudDocComponent }
@@ -79,25 +87,28 @@ const Routes: Routes = [
   },
 
   {
-    path: 'admin', component: AdmindashComponent, canActivate:[AdminGuard],
+    path: 'admin', component: AdmindashComponent, canActivate: [AdminGuard],
     children: [
- 
+
       { path: 'stock', component: CrudStockComponent },
-      { path: 'cmde', component: CmdeComponent } ,
-      { path: 'notif', component: NotifLivComponent } ,
-      { path: 'profil', component: AdminProfilComponent},
+      { path: 'cmde', component: CmdeComponent },
+      { path: 'notif', component: NotifLivComponent },
+      { path: 'profil', component: AdminProfilComponent },
       { path: 'edit', component: EditComponent }
-    
-]
-},
+
+    ]
+  },
   { path: 'login', component: LoginComponent },
   { path: 'cart', component: CartComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
-  {path: 'profil', component: ProfilComponent , canActivate:[ClientGuard]},
+  { path: 'profil', component: ProfilComponent},
+
+  { path: 'client', component: ClientComponent ,canActivate: [ClientGuard]},
+  { path: 'changepwd', component: ChangepwdComponent,canActivate: [ClientGuard] },
 
   {
-    path: 'liv', component: LivreurdashComponent, canActivate:[LivreurGuard] ,
+    path: 'liv', component: LivreurdashComponent, canActivate: [LivreurGuard],
     children: [
       { path: 'upload', component: UploadFilesComponent },
       { path: 'cmd', component: CrudCmdeComponent },
@@ -106,8 +117,8 @@ const Routes: Routes = [
 
 
 
-  { path: 'forgotpwd/:id', component: ForgotPwdComponent, canActivate:[ClientGuard]},
-  { path: 'changepwd', component: ChangepwdComponent,canActivate:[ClientGuard] },
+  { path: 'forgotpwd/:id', component: ForgotPwdComponent },
+
 
 
 
@@ -142,7 +153,8 @@ const Routes: Routes = [
     DocValidComponent,
     AdminProfilComponent,
     NotifLivComponent,
-    EditComponent
+    EditComponent,
+    ClientComponent
 
 
 
@@ -183,7 +195,7 @@ const Routes: Routes = [
 
 
   ],
-  providers: [UserServiceService,AdminGuard,LivreurGuard,SupGuard,ClientGuard,
+  providers: [UserServiceService, AdminGuard, LivreurGuard, SupGuard, ClientGuard,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

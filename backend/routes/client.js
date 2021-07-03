@@ -41,7 +41,7 @@ router.get("/getAll", function (req, res, next) {
 });
 //UPDATE_Client
 
-router.put("/updateC/:id",verifyToken, function (req, res, next) {
+router.put("/updateC/:id", function (req, res, next) {
   let id = req.params.id;
   console.log(req.body);
   Client.findByPk(id, { attributes: ["id"] }).then((client) => {

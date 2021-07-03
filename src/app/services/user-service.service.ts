@@ -81,7 +81,7 @@ export class UserServiceService {
   }
 
   updateC(id: string, name: string, tel: number, adresse: string): Observable<any> {
-    return this.http.post(this.api_prefixx + `/updateC/${id}`, {
+    return this.http.put(this.api_prefixx + `/updateC/${id}`, {
       name,
       tel,
       adresse

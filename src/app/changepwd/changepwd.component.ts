@@ -45,11 +45,11 @@ export class ChangepwdComponent implements OnInit {
       email: ['', Validators.required],
       photoUrl: ['', Validators.required],
       name: ['', Validators.required],
-     
+
     });
     this.authService.authState.subscribe((user) => {
       this.user = user;
-    
+
       console.log(this.user);
     });
   }
@@ -70,7 +70,7 @@ export class ChangepwdComponent implements OnInit {
             this.userService.change(id, { newpassword: this.Newpassword , password: this.password})
               .subscribe(result => {
                 this.form.controls['reset_password_code'].setValue(params['code']);
-                this.router.navigate(['/profil']);
+                this.router.navigate(['/client']);
               });
           } else {
             console.log("passwords does not match !")

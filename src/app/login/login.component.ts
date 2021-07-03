@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/sup/users'])
         } else if (localStorage.getItem("role") === "Client") {
 
-          this.router.navigate(['/profil'])
+          this.router.navigate(['/client'])
         }
 
 
