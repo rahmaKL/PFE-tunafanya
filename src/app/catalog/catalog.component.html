@@ -255,6 +255,22 @@
                 <div class="section-header">
                     <h2>Smartphones</h2>
                 </div>
+
+                <!-- <div class="card">
+                    <img [src]="product.image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.name}}</h5>
+                      <p class="card-text">
+                        {{product.price}} Dt
+                      </p>
+                      <a  class="btn btn-primary" [routerLink]="['/product/show/'+product.id]">Détails</a>
+                      <button (click)="addToCart(product)" class="btn btn-primary m-2">Ajouter au panier</button>
+                    </div>
+                  </div> -->
+
+
+
+
                 <div class="row align-items-center product-slider product-slider-4">
                     <div class="col-lg-3">
                         <div class="product-item">
@@ -275,11 +291,14 @@
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-cart-plus"></i></a>
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
                                 <h3>499D</h3>
+                             
+                               
+                               
                                 <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Achetez</a>
                             </div>
                         </div>
@@ -380,7 +399,7 @@
                     <!-- <h3>Featured Product</h3> -->
                 </div>
                 <div class="row align-items-center product-slider product-slider-4" >
-                    <div class="col-lg-3" *ngFor="let pdt of products">
+                    <div class="col-lg-3" *ngFor="let pdt of product">
                         <div class="product-item">
                             <div class="product-title">
                                 <a>{{ pdt.libelle }}</a>

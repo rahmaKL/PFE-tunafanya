@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { UserServiceService } from '../services/user-service.service';
 import { Subject } from 'rxjs';
-import { NgxSpinnerService } from "ngx-spinner";  
-import { NgxSpinnerModule } from 'ngx-spinner';
+import {CartService} from '../services/cart.service';
+
 export class Produit {
 
   constructor(
@@ -25,51 +25,18 @@ export class Produit {
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  cartForm: FormGroup;
-  form: any = {
+  cartProducts;
 
-    id: null,
-    libelle:null,
-    prix: null
-  };
-  dtOptions: DataTables.Settings = {};
-  dtTrigger: Subject<any> = new Subject<any>();
-  pdt = [];
-  dtElement: any;
-  constructor(
-    private fb: FormBuilder, private http: HttpClient,private modalService: NgbModal ,private userService: UserServiceService
-    ,  
-    private SpinnerService: NgxSpinnerService,
-    private formBuilder: FormBuilder,
- ) { }
-
-  ngOnInit(): void {
-    this.cartForm = this.formBuilder.group({
-      id: ['', Validators.required],
-      libelle: ['', Validators.required],
-      prix: ['', Validators.required]
-    });
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 2,
-      processing: true
-    }
-    this.getPdt()
+  constructor(private cartService: CartService) {
   }
 
-//Affichage users
-getPdt(){
-  this.SpinnerService.show();  
-  this.http.get('http://localhost:3000/produit/getAll')
- .subscribe( response => {
+  ngOnInit(): void {
+    this.cartProducts = this.cartService.getProducts();
 
-   console.log(response);
+  }
 
-   this.pdt = response as any;
- 
-
-
-
- });
-}
+  delete(id: any) {
+    this.cartService.deleteProduct(id);
+    this.cartProducts = this.cartService.getProducts();
+  }
 }

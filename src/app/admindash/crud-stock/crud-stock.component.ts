@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ProductService } from '../../services/product.service';
-import {  EventEmitter } from '@angular/core';
+
 
 export class Produit {
   constructor(
@@ -149,17 +149,26 @@ export class CrudStockComponent implements OnInit {
 
 
 //add
-onSubmit(f: NgForm ) {
-  let id =localStorage.getItem("id");
-  this.productService.createProduct(id)
-  .subscribe((response) => {
-    console.log(response);
-    this.produits = response;
-    this.ngOnInit();
-    this.modalService.dismissAll();
-  });
-}
+// onSubmit(f: NgForm ) {
+//   let id =localStorage.getItem("id");
+//   this.productService.createProduct(id)
+//   .subscribe((response) => {
+//     console.log(response);
+//     this.produits = response;
+//     this.ngOnInit();
+//     this.modalService.dismissAll();
+//   });
+// }
 
+//add
+onSubmit(f: NgForm , id : string) {
+  const url = `http://localhost:3000/produit/createP/${id}`;
+  this.http.post(url, f.value)
+    .subscribe((result) => {
+      this.ngOnInit(); //reload the table
+    });
+  this.modalService.dismissAll(); //dismiss the modal
+}
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;

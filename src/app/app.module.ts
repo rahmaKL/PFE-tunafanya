@@ -60,12 +60,16 @@ import { AdminProfilComponent } from './admindash/admin-profil/admin-profil.comp
 import { NotifLivComponent } from './admindash/notif-liv/notif-liv.component';
 import { EditComponent } from './admindash/admin-profil/edit/edit.component';
 import { ClientComponent } from './client/client.component';
+import { ShowComponent } from './product/show/show.component';
+import { FicheComponent } from './fiche/fiche.component';
 
 
 const Routes: Routes = [
 
   { path: '', component: CatalogComponent },
   { path: 'test', component: TestComponent },
+    { path: 'detail', component: FicheComponent },
+  { path: 'show', component: ShowComponent },
   // {
   //   // path: 'client', component: ProfilClientComponent, canActivate: [ClientGuard],
   //   children: [,]
@@ -154,7 +158,9 @@ const Routes: Routes = [
     AdminProfilComponent,
     NotifLivComponent,
     EditComponent,
-    ClientComponent
+    ClientComponent,
+    ShowComponent,
+    FicheComponent
 
 
 
@@ -192,7 +198,7 @@ const Routes: Routes = [
     NgxSpinnerModule,
     MDBBootstrapModule.forRoot(),
     NoopAnimationsModule,
-
+ 
 
   ],
   providers: [UserServiceService, AdminGuard, LivreurGuard, SupGuard, ClientGuard,

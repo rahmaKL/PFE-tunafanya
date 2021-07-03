@@ -40,7 +40,6 @@ export class CrudCategorieComponent implements OnInit {
       pagingType: 'full_numbers',
       pageLength: 2,
 
-      // processing: true
     }
 
     this.getCategorie()

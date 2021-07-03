@@ -50,6 +50,8 @@ export class ProfilComponent implements OnInit {
       name: ['', Validators.required],
     
     });
+
+    
     this.authService.authState.subscribe((user) => {
       this.user = user;
 
