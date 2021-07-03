@@ -41,13 +41,13 @@ router.get("/getssCat/:id", async function (req, res, next) {
   });
 
   //CREATE SUB_CATEGORIE
-  router.post("/create/:id",verifyToken, function (req, res, next) {
+  router.post("/create", function (req, res, next) {
     categorie
       .findOne({
         attributes: ["id", "nom_cat"],
-        where: {
-          id: req.params.id,
-        },
+        // where: {
+        //   id: req.params.id,
+        // },
       })
       .then( function (cat) {
 

@@ -43,7 +43,7 @@ router.get("/getAllC", function (req, res, next) {
 });
 
 //CREATE CATEGORIE
-router.post("/createCat",verifyToken, function (req, res, next) {
+router.post("/createCat", function (req, res, next) {
   categorie
     .findOne({
       attributes: ["nom_cat"],

@@ -138,8 +138,9 @@ onSave() {
 
 
 //add
-onSubmit(f: NgForm , id : string) {
-  const url = `http://localhost:3000/categorie/createCat/${id}`;
+onSubmit(f: NgForm ) {
+  // let id =localStorage.getItem("id");
+  const url = `http://localhost:3000/categorie/createCat/`;
   this.http.post(url, f.value)
     .subscribe((result) => {
       this.ngOnInit(); //reload the table
