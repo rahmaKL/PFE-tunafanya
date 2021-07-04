@@ -76,7 +76,7 @@ router.post("/createCat", function (req, res, next) {
     }).catch((error)=> console.log(error));
 });
 //UPDATE CATEGORIE
-router.put("/updateC/:id",verifyToken, function (req, res) {
+router.put("/updateC/:id", function (req, res) {
 
   let id = req.params.id;
 
@@ -100,7 +100,7 @@ router.put("/updateC/:id",verifyToken, function (req, res) {
 });
 //DELETE CATEGORIE
 
-router.get("/delete/:id",verifyToken, function (req, res) {
+router.get("/delete/:id", function (req, res) {
   let id = req.params.id;
   categorie.findByPk(id
     ,{attributes:["id"]}).then((cat) => {

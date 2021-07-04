@@ -1,9 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { UserServiceService } from '../services/user-service.service';
-import { Subject } from 'rxjs';
 import {CartService} from '../services/cart.service';
 
 export class Produit {

@@ -24,6 +24,7 @@ export class doc_justificatifs {
 })
 export class CrudDocComponent implements OnInit {
 
+  isSuccessful = false;
 
 
   closeResult: string;
@@ -64,7 +65,10 @@ export class CrudDocComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         this.docs = response as any;
+      
         this.ngOnInit();
+        this.isSuccessful = true;
+
       });
   }
 

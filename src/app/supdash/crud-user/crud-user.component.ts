@@ -25,7 +25,7 @@ export class User {
   styleUrls: ['./crud-user.component.scss']
 })
 export class CrudUserComponent implements OnInit {
-
+  isSuccessful = false;
 
   editForm: FormGroup;
   closeResult: string;
@@ -59,7 +59,6 @@ export class CrudUserComponent implements OnInit {
       createdAt: [''],
       updatedAt: ['']
     });
-
 
 }
 
@@ -103,6 +102,8 @@ console.log(this.deleteID)
       is_deleted=true;
       // this.show=false;
       // this.ngOnInit();
+      this.isSuccessful = true;
+
       this.modalService.dismissAll();
 
     });
@@ -146,7 +147,9 @@ openDetails(targetModal, users: User) {
     this.http.put(editURL, this.editForm.value)
       .subscribe((results) => {
         this.ngOnInit();
+        this.isSuccessful = true;
         this.modalService.dismissAll();
+   
       });
   }
 open(content) {

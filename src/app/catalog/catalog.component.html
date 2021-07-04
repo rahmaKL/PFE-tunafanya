@@ -88,14 +88,14 @@
 
       <div fxShow="true" fxHide.gt-sm="false">
       <button mat-icon-button  >
-        <mat-icon [routerLink]="'/catalog'">menu</mat-icon>
+        <mat-icon [routerLink]="'/'">menu</mat-icon>
       </button>
       </div>
 
 
       <div fxShow="true" fxHide.lt-md="true" >
-        <a mat-button [routerLink]="'/catalog'">Tout nos produits </a>
-        <a mat-button [routerLink]="'/catalog'"> <img height="21,5px" width="21,5px" src="../assets/DaijaraBasicsIcon.png" alt=""> Daijara Basics </a>
+        <a mat-button [routerLink]="'/'">Tout nos produits </a>
+        <a mat-button [routerLink]="'/'"> <img height="21,5px" width="21,5px" src="../assets/DaijaraBasicsIcon.png" alt=""> Daijara Basics </a>
       </div>
 
    </mat-toolbar>
@@ -169,23 +169,7 @@
                 </div>
             </div>
         </div>
-        <!-- Main Slider End -->
-
-        <!-- Brand Start -->
-        <!-- <div class="brand">
-            <div class="container-fluid">
-                <div class="brand-slider">
-                    <div class="brand-item"><img src="assets/img/brand-1.png" alt=""></div>
-                    <div class="brand-item"><img src="assets/img/brand-2.png" alt=""></div>
-                    <div class="brand-item"><img src="assets/img/brand-3.png" alt=""></div>
-                    <div class="brand-item"><img src="assets/img/brand-4.png" alt=""></div>
-                    <div class="brand-item"><img src="assets/img/brand-5.png" alt=""></div>
-                    <div class="brand-item"><img src="assets/img/brand-6.png" alt=""></div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Brand End -->
-
+      
         <!-- Feature Start-->
         <div class="feature">
             <div class="container-fluid">
@@ -256,33 +240,14 @@
                     <h2>Smartphones</h2>
                 </div>
 
-                <!-- <div class="card">
-                    <img [src]="product.image" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{product.name}}</h5>
-                      <p class="card-text">
-                        {{product.price}} Dt
-                      </p>
-                      <a  class="btn btn-primary" [routerLink]="['/product/show/'+product.id]">Détails</a>
-                      <button (click)="addToCart(product)" class="btn btn-primary m-2">Ajouter au panier</button>
-                    </div>
-                  </div> -->
-
-
-
+        
 
                 <div class="row align-items-center product-slider product-slider-4">
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
                                 <a>Nokia G20 </a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
+                               
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -298,7 +263,7 @@
 
 
 
-                                <button (click)="addToCart(product)" class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
+                                <button [routerLink]="'/cart'" class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
                             </div>
                         </div>
                     </div>
@@ -306,13 +271,7 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">XIAOMI Redmi 9A </a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
+                               
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
@@ -320,12 +279,12 @@
                                 </a>
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a  [routerLink]="'/detail1'"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
                                 <h3>750D</h3>
-                                <button (click)="addToCart(product)" class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
+                                <button  class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
                                 <!-- <a class="btn" [routerLink]="'/cart'"><i class="fa fa-shopping-cart"></i>Achetez</a> -->
                             </div>
                         </div>
@@ -334,118 +293,73 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Infinix Hot 10</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
+                               
+                                
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
                                     <img src="assets/3.jpg" alt="Product Image">
                                 </a>
                                 <div class="product-action">
+                                  
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a  [routerLink]="'/detail2'"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
                                 <h3>560D</h3>
-                                <button (click)="addToCart(product)" class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
+                                <button class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a >Tecno Spark 7 Pro</a>
-
+                                <a href="#">Tecno Spark 7 Pro</a>
+                               
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
                                     <img src="assets/4.jpg" alt="Product Image">
                                 </a>
                                 <div class="product-action">
+                                  
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a  [routerLink]="'/detail3'"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
-                                <h3>479D</h3>
-                                <button (click)="addToCart(product)" class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
+                                <h3>860D</h3>
+                                <button class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
                             </div>
                         </div>
                     </div>
-
+                  
+             
+                   
+                  
                 </div>
             </div>
         </div>
-        <!-- Featured Product Start -->
-        <div class="featured-product product" class="scroll-hide">
-
-            <div class="container-fluid"  >
-                <div class="section-header" >
-                    <!-- <h3>Featured Product</h3> -->
-                </div>
-                <div class="row align-items-center product-slider product-slider-4" >
-                    <div class="col-lg-3" *ngFor="let pdt of product">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a>{{ pdt.libelle }}</a>
-
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src='../assets/uploads/image_produit/{{pdt.avatar}}'>
-
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#" [routerLink]="'/prod1'"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3>{{ pdt.prix }}<span>Dt</span></h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
 
 
-
-
+ <!-- Newsletter Start -->
+ <div class="newsletter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 style="color:#FF6F61;" >Abonnez vous à notre Newsletter</h1>
+            </div>
+            <div class="col-md-6">
+                <div class="form">
+                    <input type="email" value="Votre email ici">
+                    <button >Envoyer</button>
                 </div>
             </div>
         </div>
-        <!-- Featured Product End -->
-
-        <!-- Newsletter Start -->
-        <div class="newsletter">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1 style="color:#FF6F61;" >Abonnez-vous à notre newsletter</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form">
-                            <input type="email" value="Votre email ici">
-                            <button >Envoyer</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Newsletter End -->
+    </div>
+</div>
+<!-- Newsletter End --> 
 
         <!-- Recent Product Start -->
         <div class="recent-product product">
@@ -458,22 +372,15 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a>SVR Ecran Solaire</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
+                                
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
                                     <img src="assets/5.jpg" alt="Product Image">
                                 </a>
                                 <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail4'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
@@ -486,22 +393,15 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Daylong Ecran solaire</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
+                               
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
                                     <img src="assets/6.jpg" alt="Product Image">
                                 </a>
                                 <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail5'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
@@ -514,27 +414,20 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">K-REINE Ecran Protecteur</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
+                              
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
                                     <img src="assets/8.jpg" alt="Product Image">
                                 </a>
                                 <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail6'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
                                 <h3>68D</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Achetez</a>
                             </div>
                         </div>
                     </div>
@@ -542,27 +435,21 @@
                         <div class="product-item">
                             <div class="product-title">
                                 <a href="#">Souplesse Kit</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
+                               
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
                                     <img src="assets/9.jpg" alt="Product Image">
                                 </a>
                                 <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                   
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail7'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                <h3>15 Dt</h3>
+                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Achetez</a>
                             </div>
                         </div>
                     </div>

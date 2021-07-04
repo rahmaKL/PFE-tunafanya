@@ -1,0 +1,112 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <mat-toolbar color="primary"  >
+        <mat-toolbar-row>
+          <img src="../assets/daijaraIcon.png" width=" 118,327px" alt="">
+          <div fxShow="true" fxHide.lt-md="true"  class="input-group">
+            <input  type="text" class="form-control" placeholder="Tout nos catégories">
+            <button type="submit"><i class="fa fa-search b"></i></button>
+          <!-- <div class="input-group-append">
+              <button class="btn btn-secondary" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>  -->
+          </div>
+          <img width="20px" height="20px" src="../assets/user.png" alt="">
+          <a mat-button [routerLink]="'/login'"> S' IDENTIFIER  </a>
+      
+            <a [routerLink]="'/cart'" > 
+            <!-- <i class="fa fa-shopping-cart"></i> -->
+            <img src="../assets/image.png" width="50px" height="50px" alt="">
+            <span class="span">(0)</span> </a>
+      
+      
+      
+        </mat-toolbar-row>
+      </mat-toolbar>
+      
+      <mat-toolbar  color="secondary" >
+      
+          <div fxShow="true" fxHide.gt-sm="false">
+          <button mat-icon-button  >
+            <mat-icon [routerLink]="'/catalog'">menu</mat-icon>
+          </button>
+          </div>
+      
+      
+          <div fxShow="true" fxHide.lt-md="true" >
+            <a mat-button [routerLink]="'/catalog'">Tout nos produits </a>
+            <a mat-button [routerLink]="'/catalog'"> <img height="21,5px" width="21,5px" src="../assets/DaijaraBasicsIcon.png" alt=""> Daijara Basics </a>
+          </div>
+      
+       </mat-toolbar>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+	
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="assets/9.jpg" /></div>
+						  <div class="tab-pane" id="pic-2"><img src="assets/9.jpg" /></div>
+						  <div class="tab-pane" id="pic-3"><img src="assets/9.jpg"  /></div>
+						  <div class="tab-pane" id="pic-4"><img src="assets/9.jpg"  /></div>
+						  <div class="tab-pane" id="pic-5"><img src="assets/9.jpg"  /></div>
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="assets/9.jpg" /></a></li>
+						  <li><a data-target="#pic-2" data-toggle="tab"><img src="assets/9.jpg" /></a></li>
+						  <li><a data-target="#pic-3" data-toggle="tab"><img src="assets/9.jpg" /></a></li>
+						  <li><a data-target="#pic-4" data-toggle="tab"><img src="assets/9.jpg" /></a></li>
+						  <li><a data-target="#pic-5" data-toggle="tab"><img src="assets/9.jpg" /></a></li>
+						</ul>
+						
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">Souplesse Kit</h3>
+						<div >
+              <div class="form-group">
+                <ngb-rating [formControl]="ctrl"></ngb-rating>
+                <div class="form-text small">
+                  <div *ngIf="ctrl.valid" class="text-success"><h4>Merci!</h4></div>
+                  <div *ngIf="ctrl.invalid" class="text-danger"><h4>Donner un note</h4></div>
+                </div>
+              </div>
+              
+              <hr>
+              <pre>Note: <b>{{ ctrl.value }}</b></pre>
+              
+                              
+							<!-- <span class="review-no">41 reviews</span> -->
+						</div>
+						<p class="product-description">
+              
+             
+            </p>
+						<h4 class="price">Prix: <span>15</span>Dt</h4>
+						<!-- <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p> -->
+						<!-- <h5 class="sizes">sizes:
+							<span class="size" data-toggle="tooltip" title="small">s</span>
+							<span class="size" data-toggle="tooltip" title="medium">m</span>
+							<span class="size" data-toggle="tooltip" title="large">l</span>
+							<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+						</h5> -->
+						
+                            <div class="action">
+                                <button class="add-to-cart btn btn-default" type="button" [routerLink]="'/cart'" >Ajouter au panier</button>
+                                <!-- <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button> -->
+                            </div>
+						
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
