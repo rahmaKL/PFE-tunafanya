@@ -59,6 +59,8 @@ import { EditComponent } from './admindash/admin-profil/edit/edit.component';
 import { ClientComponent } from './client/client.component';
 import { ShowComponent } from './product/show/show.component';
 import { FicheComponent } from './detail/fiche/fiche.component';
+import { Fiche2Component } from './detail/fiche2/fiche2.component';
+import { Fiche3Component } from './detail/fiche3/fiche3.component';
 
 
 const Routes: Routes = [
@@ -158,7 +160,9 @@ const Routes: Routes = [
     EditComponent,
     ClientComponent,
     ShowComponent,
-    FicheComponent
+    FicheComponent,
+    Fiche2Component,
+    Fiche3Component
 
 
   ],
