@@ -97,13 +97,13 @@ openDelete(targetModal, id: string) {
 
 
 
-onDelete() {
+onDelete(is_deleted) {
   console.log(this.deleteID)
   this.userService.deleteDoc(this.deleteID)
     .subscribe((response) => {
       console.log(response);
       this.docs = response;
-     
+
 
       this.modalService.dismissAll();
     });

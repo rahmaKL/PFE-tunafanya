@@ -78,27 +78,27 @@ router.get("/downfile/:fileName", function (req, res, next) {
 
 //DELETE doc
 
-router.delete("/delete/:id", function (req, res) {
-  let id = req.params.id;
-  doc_justificatifs.destroy({
-    where: {
-      id
-    }
-  })
-  .then((doc) =>
-  {
+// router.delete("/delete/:id", function (req, res) {
+//   let id = req.params.id;
+//   doc_justificatifs.destroy({
+//     where: {
+//       id
+//     }
+//   })
+//   .then((doc) =>
+//   {
 
-    prepareResponse(res, 200, { success: true }, "application/json");
+//     prepareResponse(res, 200, { success: true }, "application/json");
 
-  })
-  .catch((error)  =>
-{
-  prepareResponse(res, 500, { success: false }, "application/json");
-}
+//   })
+//   .catch((error)  =>
+// {
+//   prepareResponse(res, 500, { success: false }, "application/json");
+// }
 
-  )
+//   )
 
-});
+// });
 
 //GET ALL
 router.get("/getAll", async function (req, res, next) {
@@ -107,7 +107,8 @@ router.get("/getAll", async function (req, res, next) {
      attributes: ["id","libelle", "url_doc"],
      include: [{ model: Livreurs, attributes: ['name'], as:'livreur'}],
      where: {
-       is_valide: 0
+       is_valide: 0,
+       is_deleted:false
      }
      })
      .then((doc) => {
@@ -144,7 +145,8 @@ Livreurs.findOne(
     include: [{ model: Livreurs, attributes: ['name'], as:'livreur'}],
     where: {
 
-      id_livreur:livreur.id
+      id_livreur:livreur.id,
+      is_deleted:false
     }
     })
     .then((doc) => {
@@ -225,6 +227,7 @@ router.post('/upload/:id', verifyToken , function(req,res,next){
           libelle:req.file.originalname,
           url_doc:md5(req.file.originalname),
           is_valide: false,
+          is_deleted: false,
           createdAt: new Date(),
           updatedAt: new Date(),
           id_livreur: livreur.id
@@ -268,27 +271,27 @@ router.put("/valide/:id",verifyToken, function (req, res) {
     }
   });
 });
-// router.put("/delete/:id",verifyToken, function (req, res) {
-//   let id = req.params.id;
-//       doc_justificatifs.findOne( {
-//       attributes: ["id"],
-//       include: [{ model: Livreurs, attributes: ['id'], as: 'livreur'}],
+router.delete("/delete/:id", function (req, res) {
+  let id = req.params.id;
+      doc_justificatifs.findOne(id, {
+      attributes: ["id"],
+      include: [{ model: Livreurs, attributes: ['id'], as: 'livreur'}],
 
-//     }).then((file) => {
+    }).then((file) => {
 
-//       try {
-//       file.update({
-//         is_deleted: true,
-//         updatedAt: new Date()
-//       });
-//       prepareResponse(res, 200, { success: true }, "application/json");
-//       }
-//       catch (error) {
-//       console.log(error);
-//       prepareResponse(res, 500, { success: false }, "application/json");
-//     }
-//   });
-// });
+      try {
+      file.update({
+        is_deleted: true,
+        updatedAt: new Date()
+      });
+      prepareResponse(res, 200, { success: true }, "application/json");
+      }
+      catch (error) {
+      console.log(error);
+      prepareResponse(res, 500, { success: false }, "application/json");
+    }
+  });
+});
 
 
 module.exports = router;

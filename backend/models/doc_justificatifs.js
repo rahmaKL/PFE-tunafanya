@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       libelle: DataTypes.STRING,
       url_doc: DataTypes.STRING,
       is_valide: DataTypes.BOOLEAN,
-     
+      is_deleted: DataTypes.BOOLEAN,
 
       id_livreur: {
         type: DataTypes.INTEGER,
