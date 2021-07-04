@@ -21,7 +21,7 @@ export class categorie {
   styleUrls: ['./crud-categorie.component.scss']
 })
 export class CrudCategorieComponent implements OnInit {
-
+  isSuccessful = false;
   editForm: FormGroup;
   closeResult: string;
   title = 'datatables';
@@ -102,6 +102,8 @@ onDelete(is_deleted: boolean) {
       this.categories = response;
       is_deleted = true;
       // this.ngOnInit();
+      this.isSuccessful = true;
+
       this.modalService.dismissAll();
     });
 }
@@ -130,6 +132,9 @@ onSave() {
   this.http.put(editURL, this.editForm.value)
     .subscribe((results) => {
       this.ngOnInit();
+
+      this.isSuccessful = true;
+
       this.modalService.dismissAll();
     });
 }
@@ -144,6 +149,8 @@ onSubmit(f: NgForm ) {
     .subscribe((result) => {
       this.ngOnInit(); //reload the table
     });
+    this.isSuccessful = true;
+
   this.modalService.dismissAll(); //dismiss the modal
 }
 

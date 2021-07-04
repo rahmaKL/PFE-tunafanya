@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 
 @Component({
-  selector: 'app-fiche3',
-  templateUrl: './fiche3.component.html',
-  styleUrls: ['./fiche3.component.scss']
+  selector: 'app-fiche7',
+  templateUrl: './fiche7.component.html',
+  styleUrls: ['./fiche7.component.scss']
 })
-export class Fiche3Component {
+export class Fiche7Component {
 
   ctrl = new FormControl(null, Validators.required);
 

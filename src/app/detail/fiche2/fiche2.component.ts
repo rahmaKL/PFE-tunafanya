@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-fiche2',
   templateUrl: './fiche2.component.html',
   styleUrls: ['./fiche2.component.scss']
 })
-export class Fiche2Component implements OnInit {
+export class Fiche2Component {
 
-  constructor() { }
+  ctrl = new FormControl(null, Validators.required);
 
-  ngOnInit(): void {
+  toggle() {
+    if (this.ctrl.disabled) {
+      this.ctrl.enable();
+    } else {
+      this.ctrl.disable();
+    }
   }
-
 }

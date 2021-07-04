@@ -1,3 +1,6 @@
+<div class="alert alert-success" *ngIf="isSuccessful"> Opération effectué avec succès!
+</div>
+
 <div class="border">
     <button class="btn btn-md btn-outline-primary" (click)="open(content)">
       <i class="fa fa-product"></i>Ajouter categorie</button>
@@ -53,7 +56,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate *ngIf="!isSuccessful">
         <div class="form-group">
           <label for="nom_cat">Nom catégorie</label>
           <div class="input-group">
@@ -79,7 +82,7 @@
 
 
   <ng-template #contentDelete let-modal >
-    <div class="modal-header">
+    <div class="modal-header" *ngIf="!isSuccessful">
       <h4 class="modal-title">Confirmer la suppression</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
@@ -158,7 +161,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form [formGroup]="editForm" novalidate>
+      <form [formGroup]="editForm" novalidate *ngIf="!isSuccessful">
         <div class="form-group">
           <label for="nom_cat">nom_cat</label>
           <div class="input-group">

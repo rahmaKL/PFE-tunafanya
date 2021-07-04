@@ -27,7 +27,7 @@ export class Produit {
   styleUrls: ['./crud-stock.component.scss']
 })
 export class CrudStockComponent implements OnInit {
-
+  isSuccessful= false;
   editForm: FormGroup;
   closeResult: string;
   title = 'angulardatatables';
@@ -92,6 +92,7 @@ export class CrudStockComponent implements OnInit {
         console.log(response);
         this.produits = response;
         is_deleted = true;
+        this.isSuccessful= true;
 
         this.modalService.dismissAll();
       });
@@ -143,6 +144,8 @@ export class CrudStockComponent implements OnInit {
     this.http.put(editURL, this.editForm.value)
       .subscribe((results) => {
         this.ngOnInit();
+        this.isSuccessful= true;
+
         this.modalService.dismissAll();
       });
   }
@@ -156,6 +159,8 @@ onSubmit(f: NgForm) {
     .subscribe((result) => {
       this.ngOnInit(); //reload the table
       });
+      this.isSuccessful= true;
+
   this.modalService.dismissAll(); //dismiss the modal
 }
 

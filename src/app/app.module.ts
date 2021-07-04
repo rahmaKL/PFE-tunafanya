@@ -61,6 +61,11 @@ import { ShowComponent } from './product/show/show.component';
 import { FicheComponent } from './detail/fiche/fiche.component';
 import { Fiche2Component } from './detail/fiche2/fiche2.component';
 import { Fiche3Component } from './detail/fiche3/fiche3.component';
+import { Fiche4Component } from './detail/fiche4/fiche4.component';
+import { Fiche5Component } from './detail/fiche5/fiche5.component';
+import { Fiche6Component } from './detail/fiche6/fiche6.component';
+import { Fiche7Component } from './detail/fiche7/fiche7.component';
+import { Fiche8Component } from './detail/fiche8/fiche8.component';
 
 
 const Routes: Routes = [
@@ -69,6 +74,14 @@ const Routes: Routes = [
   { path: 'test', component: TestComponent },
 
     { path: 'detail', component: FicheComponent },
+    { path: 'detail1', component: Fiche2Component },
+    { path: 'detail2', component: Fiche3Component },
+    { path: 'detail3', component: Fiche4Component },
+    { path: 'detail4', component: Fiche5Component },
+    { path: 'detail5', component: Fiche6Component },
+    { path: 'detail6', component: Fiche7Component },
+    { path: 'detail7', component: Fiche8Component },
+
   { path: 'show', component: ShowComponent },
   // {
   //   // path: 'client', component: ProfilClientComponent, canActivate: [ClientGuard],
@@ -162,7 +175,12 @@ const Routes: Routes = [
     ShowComponent,
     FicheComponent,
     Fiche2Component,
-    Fiche3Component
+    Fiche3Component,
+    Fiche4Component,
+    Fiche5Component,
+    Fiche6Component,
+    Fiche7Component,
+    Fiche8Component
 
 
   ],
