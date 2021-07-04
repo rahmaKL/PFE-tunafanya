@@ -42,20 +42,25 @@ router.get("/getssCat/:id", async function (req, res, next) {
 
   //CREATE SUB_CATEGORIE
   router.post("/create", function (req, res, next) {
-    categorie
+    Sous_cat
       .findOne({
-        attributes: ["id", "nom_cat"],
-        // where: {
-        //   id: req.params.id,
-        // },
+        attributes: ["id", "nom_ss_cat"],
+        where :
+        {nom_ss_cat:req.body.nom_ss_cat}
       })
-      .then( function (cat) {
+      .then( (pdt) => {
+         if (pdt) {
+        const response = {
+          success: false,
+          message: "SUBCATEGORIE already exist !",
+        };
+        prepareResponse(res, 500, response, "application/json");
+      } else {
 
-          let { nom_ss_cat} = req.body;
+          let {nom_ss_cat} = req.body;
           Sous_cat.create({
             nom_ss_cat,
             is_deleted: false,
-            id_categorie:categorie.id,
             createdAt: new Date(),
             updatedAt: new Date(),
           });
@@ -65,6 +70,7 @@ router.get("/getssCat/:id", async function (req, res, next) {
           }
           prepareResponse(res, 200, response, "application/json");
         }
+      }
       ).catch((error)=> console.log(error));
   });
   //UPDATE CATEGORIE

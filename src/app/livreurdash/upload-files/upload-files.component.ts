@@ -95,14 +95,18 @@ openDelete(targetModal, id: string) {
   });
 }
 
-onDelete(id: string) {
-  console.log( this.deleteID);
-  this.userService.deleteDoc( this.deleteID)
+
+
+onDelete() {
+  console.log(this.deleteID)
+  this.userService.deleteDoc(this.deleteID)
     .subscribe((response) => {
       console.log(response);
       this.docs = response;
-      this.modalService.dismissAll();
+     
 
+      this.modalService.dismissAll();
     });
+
   }
 }

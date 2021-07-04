@@ -16,19 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    nom_ss_cat: DataTypes.STRING,
-    // id_cat:
-    // {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //     references: {
-    //         model: 'categories',
-    //         key: 'id'
-    //     },},
+nom_ss_cat: DataTypes.STRING,
 
 
-
-        is_deleted :DataTypes.BOOLEAN,
+is_deleted :DataTypes.BOOLEAN,
 
 
       },

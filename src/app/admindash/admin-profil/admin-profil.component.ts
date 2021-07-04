@@ -11,8 +11,20 @@ import { UserServiceService } from './../../services/user-service.service';
   styleUrls: ['./admin-profil.component.scss']
 })
 export class AdminProfilComponent implements OnInit {
-admin:[];
+  updateForm: FormGroup;
 
+  isLoggedin: boolean = null;
+  form: any = {
+
+    nom_boutique: null,
+    tel:null,
+    adresse: null
+  };
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  isSuccessful = false;
+  isSignUpFailed = false;
 
   constructor(  private router:Router,
     private formBuilder: FormBuilder,
@@ -21,17 +33,27 @@ admin:[];
 
 
   ngOnInit(): void {
-
+    this.updateForm = this.formBuilder.group({
+      nom_boutique : ['', Validators.required],
+      tel: ['', Validators.required],
+      adresse:['', Validators.required]
+    });
   }
-
-  getAdmin() {
-    let id= localStorage.getItem("id")
-    this.http.get(`http://localhost:3000/users/getAdmin/${id}`)
-      .subscribe(response => {
-        console.log(response);
-       this.admin = response as any;
-      });
+  onSubmit(): void {
+    const { nom_boutique, tel, adresse } = this.form;
+    let id = localStorage.getItem("id");
+    console.log(this.form);
+    this.UserService.updateAdmin(id,nom_boutique, tel, adresse).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSuccessful = false;
+        this.isSignUpFailed = true;
+      }
+    );
   }
-
-
 }

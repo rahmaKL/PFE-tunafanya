@@ -8,8 +8,14 @@
 
     <header class="header dark-bg">
       <div class="toggle-nav">
+
         <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i
-            class="icon_menu"></i></div>
+            class="icon_menu"></i>
+            </div>
+            <a  routerLinkActive="active" [routerLink]="'/login'" class="btn navbar-btn btn-dark navbar-right logout" role="button" >
+              <i class="fas fa-sign-out-alt"></i>
+
+            Déconnexion</a>
       </div>
 
       <!--logo start-->
@@ -19,29 +25,26 @@
         <!--  search form start -->
         <ul class="nav top-menu">
           <li>
-           
+
+
           </li>
         </ul>
-        
-        <a  routerLinkActive="active" [routerLink]="'/login'" class="btn navbar-btn btn-dark navbar-right logout" role="button" >
-          <i class="fas fa-sign-out-alt"></i>
 
-        Déconnexion</a>
 
 
 
 
         <!--  search form end -->
       </div>
-  
 
 
 
 
 
 
-       
-     
+
+
+
     </header>
     <!--header end-->
 
