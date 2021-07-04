@@ -28,7 +28,6 @@ import { DataTablesModule } from 'angular-datatables';
 import { FacebookLoginProvider, SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ProfilComponent } from './profil/profil.component';
-// import { ProfilClientComponent } from './profil-client/profil-client.component';
 import { UserServiceService } from './services/user-service.service';
 import { ForgotPwdComponent } from './forgot-pwd/forgot-pwd.component';
 import { ChangepwdComponent } from './changepwd/changepwd.component';
@@ -43,10 +42,8 @@ import { SupGuard } from './guard/sup.guard';
 import { ClientGuard } from './guard/client.guard';
 import { LivreurGuard } from './guard/livreur.guard';
 import { NgxSpinnerModule } from "ngx-spinner";
-// import { AngularFileViewerModule } from '@taldor-ltd/angular-file-viewer';
 import { CmdeComponent } from './admindash/cmde/cmde.component';
 import { CrudStockComponent } from './admindash/crud-stock/crud-stock.component';
-
 import { CrudSScatComponent } from './supdash/crud-categorie/crud-sscat/crud-sscat.component';
 import { CrudCategorieComponent } from './supdash/crud-categorie/crud-categorie.component';
 import { LivreurdashComponent } from './livreurdash/livreurdash.component';
@@ -61,13 +58,14 @@ import { NotifLivComponent } from './admindash/notif-liv/notif-liv.component';
 import { EditComponent } from './admindash/admin-profil/edit/edit.component';
 import { ClientComponent } from './client/client.component';
 import { ShowComponent } from './product/show/show.component';
-import { FicheComponent } from './fiche/fiche.component';
+import { FicheComponent } from './detail/fiche/fiche.component';
 
 
 const Routes: Routes = [
 
   { path: '', component: CatalogComponent },
   { path: 'test', component: TestComponent },
+
     { path: 'detail', component: FicheComponent },
   { path: 'show', component: ShowComponent },
   // {
@@ -161,8 +159,6 @@ const Routes: Routes = [
     ClientComponent,
     ShowComponent,
     FicheComponent
-
-
 
 
   ],

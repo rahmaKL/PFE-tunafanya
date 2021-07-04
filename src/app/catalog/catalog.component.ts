@@ -4,7 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
 import { ProductService } from '../services/product.service';
 import {CartService} from '../services/cart.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {CategorieService} from '../services/categorie.service';
+
 export class Produit {
   constructor(
     public id: string,
@@ -22,17 +24,25 @@ export class Produit {
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
-  @Input() product: any;
+  categories: [];
+  products: [];
+
 
   // products:[];
   constructor(private fb: FormBuilder, private http: HttpClient,
     private productService: ProductService,
     private cartService: CartService,
-    private router: Router,) {  
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private categorieService: CategorieService
+   ) {  
  
 }
 
 ngOnInit(): void {
+  this.categories = this.categorieService.getCategories();
+  this.products = this.productService.getProducts();
+  
 }
 addToCart(product){
   this.cartService.addProduct(product);
@@ -43,12 +53,12 @@ addToCart(product){
 
 
 //  Affichage produits
- getProduit() {
-  this.http.get('http://localhost:3000/produit/getAll')
-    .subscribe(response => {
-      console.log(response);
-     this.product = response as any;
-    });
-}
+//  getProduit() {
+//   this.http.get('http://localhost:3000/produit/getAll')
+//     .subscribe(response => {
+//       console.log(response);
+//      this.product = response as any;
+//     });
+// }
 
 }

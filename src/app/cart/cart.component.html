@@ -37,15 +37,9 @@
         <a mat-button [routerLink]="'/catalog'">Tout nos produits </a>
         <a mat-button [routerLink]="'/catalog'"> <img height="21,5px" width="21,5px" src="../assets/DaijaraBasicsIcon.png" alt=""> Daijara Basics </a>
   
-        <!-- <a mat-button [routerLink]="'/accounts'">  <img src="../assets//ElectrinquePhotoIcon.png" alt=""> Electronique et photo </a>
-        <a mat-button [routerLink]="'/create-account'"> <img src="../assets/cuisineIcon.png" alt=""> Cuisine, Ménage et Salon </a>
-        <a mat-button [routerLink]="'/contacts'"> <img src="../assets/ordinateurIcon.png" alt=""> Ordinateur </a>
-        <a mat-button [routerLink]="'/create-contact'"> <img src="../assets/BeautyIcon.png" alt=""> Beauté </a>
-        <a mat-button [routerLink]="'/activities'"> <img src="../assets/LoisirsIcon.png" alt=""> Sports et Loisirs </a>
-        <a mat-button [routerLink]="'/create-activity'"> <img src="../assets/cadeauIcon.png" alt=""> Idées et Cadeau </a>
-        <a mat-button [routerLink]="'/create-activity'"> <img src="../assets/VoyageIcon.png" alt=""> Voyages </a>
+   
   
-   -->
+
       </div>
   
    </mat-toolbar>
@@ -63,88 +57,125 @@
 
  
 
-        
-        <!-- Cart Start -->
-        <div class="cart-page">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="cart-page-inner">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                      <th>Nom</th>
-                                      <th>Image</th>
-                                      <th>Prix</th>
-                                      <th>Quantité</th>
-                                      <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr *ngFor="let product of cartProducts">
-                                      <td>{{product.name}}</td>
-                                      <td><img [src]="product.image" width="50"></td>
-                                      <td>{{product.price}}</td>
-                                      <td>1</td>
-                                      <td>
-                                        <button class='btn btn-danger' (click)="delete(product.id)"><i class='fa fa-close'></i></button>
-                                      </td>
-                                    </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                                
-                                
-                                    
-                                 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="cart-page-inner">
-                            <div class="row">
-                                <!-- <div class="col-md-12">
-                                    <div class="coupon">
-                                        <input type="text" placeholder="Coupon Code">
-                                        <button>Apply Code</button>
-                                    </div>
-                                </div> -->
-                                <div class="col-md-12">
-                                    <div class="cart-summary">
-                                        <div class="cart-content">
-                                            <!-- <h1>Cart Summary</h1> -->
-                                            <p>Sub Total<span>$99</span></p>
-                                            <p>Frais de livraison<span>6d</span></p>
-                                            <h2>Grand Total<span>100 D</span></h2>
-                                        </div>
-                                        <div class="cart-btn">
-                                            <button>POURSUIVRE VOS ACHATS</button>
-                                            <button>FINALISER VOTRE COMMANDE</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-      
-        <!-- Cart End -->
-        
+       <!-- Favicon -->
+       <link href="img/favicon.ico" rel="icon">
 
-        <!-- Footer Bottom End -->       
-        
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/slick/slick.min.js"></script>
-        
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+       <!-- Google Fonts -->
+       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+       <!-- CSS Libraries -->
+       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      
+
+
+
+
+       
+       <!-- Cart Start -->
+       <div class="cart-page">
+           <div class="container-fluid">
+               <div class="row">
+                   <div class="col-lg-8">
+                       <div class="cart-page-inner">
+                           <div class="table-responsive">
+                               <table  class="table table-bordered">
+                                   <thead >
+                                       <tr>
+                                           <th>Produit</th>
+                                           <th>Prix</th>
+                                           <th>Quantité</th>
+                                           <th>Total</th>
+                                           <th>Action</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody  class="align-middle">
+                                       <tr>
+                                           <td>
+                                               <div class="img">
+                                                   <a href="#"><img src="assets/1.jpg" alt="Image"></a>
+                                                   <p>Nokia G20</p>
+                                               </div>
+                                           </td>
+                                           <td>499D</td>
+                                           <td>
+                                               <div class="qty">
+                                                   <button class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                   <input type="text" value="1">
+                                                   <button class="btn-plus"><i class="fa fa-plus"></i></button>
+                                               </div>
+                                           </td>
+                                           <td>499D</td>
+                                           <td><button><i class="fa fa-trash"></i></button></td>
+                                       </tr>
+                               
+                                       <!-- <tr>
+                                           <td>
+                                               <div class="img">
+                                                   <a href="#"><img src="img/product-5.jpg" alt="Image"></a>
+                                                   <p>Product Name</p>
+                                               </div>
+                                           </td>
+                                           <td>$99</td>
+                                           <td>
+                                               <div class="qty">
+                                                   <button class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                   <input type="text" value="1">
+                                                   <button class="btn-plus"><i class="fa fa-plus"></i></button>
+                                               </div>
+                                           </td>
+                                           <td>$99</td>
+                                           <td><button><i class="fa fa-trash"></i></button></td>
+                                       </tr> -->
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-4">
+                       <div class="cart-page-inner">
+                           <div class="row">
+                               <div class="col-md-12">
+                               </div>
+                               <div class="col-md-12">
+                                   <div class="cart-summary">
+                                       <div class="cart-content">
+                                           <h1>Votre panier</h1>
+                                        
+                                           <p>Frais de livraison<span>6d</span></p>
+                                           <h2>Grand Total<span>499Dt</span></h2>
+                                       </div>
+                                 
+                                           
+                                           
+                                     
+                                       <div class="cart-btn">
+                                           <button >FINALISER VOTRE COMMANDE</button>
+                                           <button [routerLink]="''">POURSUIVRE VOS ACHATS</button>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!-- Cart End -->
+       
+
+       <!-- Footer Bottom End -->       
+       
+       <!-- Back to Top -->
+       <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+       
+       <!-- JavaScript Libraries -->
+       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+       <script src="lib/easing/easing.min.js"></script>
+       <script src="lib/slick/slick.min.js"></script>
+       
+       <!-- Template Javascript -->
+       <script src="js/main.js"></script>
 
 
