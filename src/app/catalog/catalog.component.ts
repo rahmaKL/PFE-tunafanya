@@ -15,7 +15,7 @@ export class Produit {
      public image: string,
     public prix: number,
 
-   ) 
+   )
     {}
 }
 @Component({

@@ -11,26 +11,26 @@
         animation:Slider 9s infinite linear;
         box-shadow: 1px 2px 10px 5px white;
     }
- 
+
     @keyframes Slider {
         10% {
             background-image: url('assets/img/slider-1.jpg');
         }
- 
+
         35% {
             background-image: url('assets/img/slider-3.jpg');
         }
- 
+
         75% {
             background-image: url('assets/img/slider-1.jpg');
         }
- 
+
     }
- 
- 
- 
- 
- 
+
+
+
+
+
     .h {
         margin-top: 18%;
     }
@@ -46,11 +46,11 @@
     /* this will hide the scrollbar in internet explorers */
     -ms-overflow-style: none;
   }
-  
+
   /* this will hide the scrollbar in webkit based browsers - safari, chrome, etc */
-  .scroll-hide ul::-webkit-scrollbar { 
+  .scroll-hide ul::-webkit-scrollbar {
     width: 0 !important;
-    display: none; 
+    display: none;
   }
 </style>
 
@@ -69,39 +69,39 @@
           <button class="btn btn-secondary" type="button">
             <i class="fa fa-search"></i>
           </button>
-        </div> 
+        </div>
       </div>
       <img width="20px" height="20px" src="../assets/user.png" alt="">
       <a mat-button [routerLink]="'/login'"> S' IDENTIFIER  </a>
-  
-        <a [routerLink]="'/cart'" > 
+
+        <a [routerLink]="'/cart'" >
         <!-- <i class="fa fa-shopping-cart"></i> -->
         <img src="../assets/image.png" width="50px" height="50px" alt="">
         <span class="span">(0)</span> </a>
-  
-  
-  
+
+
+
     </mat-toolbar-row>
   </mat-toolbar>
-  
+
   <mat-toolbar  color="secondary" >
-  
+
       <div fxShow="true" fxHide.gt-sm="false">
       <button mat-icon-button  >
         <mat-icon [routerLink]="'/'">menu</mat-icon>
       </button>
       </div>
-  
-  
+
+
       <div fxShow="true" fxHide.lt-md="true" >
         <a mat-button [routerLink]="'/'">Tout nos produits </a>
         <a mat-button [routerLink]="'/'"> <img height="21,5px" width="21,5px" src="../assets/DaijaraBasicsIcon.png" alt=""> Daijara Basics </a>
       </div>
-  
+
    </mat-toolbar>
- 
-   
-        
+
+
+
         <!-- Main Slider Start -->
         <div class="header">
             <div class="container-fluid" >
@@ -147,7 +147,7 @@
                                     <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Achetez maintenant</a>
                                 </div>
                             </div>
-                    
+
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -155,13 +155,13 @@
                             <div class="img-item">
                                 <img src="assets/img/category-6.jpg" />
                                 <a class="img-text" href="">
-                             
+
                                 </a>
                             </div>
                             <div class="img-item">
                                 <img src="assets/img/category-2.jpg" />
                                 <a class="img-text" href="">
-                                  
+
                                 </a>
                             </div>
                         </div>
@@ -169,8 +169,8 @@
                 </div>
             </div>
         </div>
-        <!-- Main Slider End -->      
-        
+        <!-- Main Slider End -->
+
         <!-- Brand Start -->
         <!-- <div class="brand">
             <div class="container-fluid">
@@ -184,8 +184,8 @@
                 </div>
             </div>
         </div> -->
-        <!-- Brand End -->      
-        
+        <!-- Brand End -->
+
         <!-- Feature Start-->
         <div class="feature">
             <div class="container-fluid">
@@ -229,12 +229,12 @@
                 </div>
             </div>
         </div>
-        <!-- Feature End-->      
-        
+        <!-- Feature End-->
+
         <!-- Category Start-->
- 
-        <!-- Category End-->       
-        
+
+        <!-- Category End-->
+
         <!-- Call to Action Start -->
         <div class="call-to-action">
             <div class="container-fluid">
@@ -249,7 +249,7 @@
                 </div>
             </div>
         </div>
-        <!-- Call to Action End -->       
+        <!-- Call to Action End -->
         <div class="recent-product product">
             <div class="container-fluid" >
                 <div class="section-header">
@@ -276,10 +276,10 @@
                             </div>
                             <div class="product-price">
                                 <h3>499D</h3>
-                             
-                               
-                               
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Achetez</a>
+
+
+
+                                <button  class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
                             </div>
                         </div>
                     </div>
@@ -295,12 +295,13 @@
                                 </a>
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a  [routerLink]="'/detail1'"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
                                 <h3>750D</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Achetez</a>
+                                <button  class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
+                                <!-- <a class="btn" [routerLink]="'/cart'"><i class="fa fa-shopping-cart"></i>Achetez</a> -->
                             </div>
                         </div>
                     </div>
@@ -318,12 +319,12 @@
                                 <div class="product-action">
                                   
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a  [routerLink]="'/detail2'"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
                                 <h3>560D</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Achetez</a>
+                                <button class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
                             </div>
                         </div>
                     </div>
@@ -338,49 +339,22 @@
                                     <img src="assets/4.jpg" alt="Product Image">
                                 </a>
                                 <div class="product-action">
-                                   
+                                  
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a  [routerLink]="'/detail3'"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
-                                <h3>479D</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Achetez</a>
+                                <h3>560D</h3>
+                                <button class="btn"><i class="fa fa-shopping-cart"></i>Achetez</button>
                             </div>
-                        </div>
-                    </div>
-               
-                </div>
-            </div>
-        </div>
-        <!-- Featured Product Start -->
-        <div class="featured-product product" class="scroll-hide">
-           
-            <div class="container-fluid"  >
-                <div class="section-header" >
-                    <!-- <h3>Featured Product</h3> -->
-                </div>
-               
-                           
-                    </div>
+                        
                   
-             
-                   
-                  
-              
-           
-        </div>
-        <!-- Featured Product End -->       
-        
-        <!-- Newsletter Start -->
-        <div class="newsletter">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1 style="color:#FF6F61;" >Abonnez-vous à notre newsletter</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form">
+
+
+
+
+
                             <input type="email" value="Votre email ici">
                             <button >Envoyer</button>
                         </div>
@@ -388,8 +362,8 @@
                 </div>
             </div>
         </div>
-        <!-- Newsletter End -->        
-        
+        <!-- Newsletter End -->
+
         <!-- Recent Product Start -->
         <div class="recent-product product">
             <div class="container-fluid" >
@@ -409,7 +383,7 @@
                                 </a>
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail4'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
@@ -430,7 +404,7 @@
                                 </a>
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail5'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
@@ -451,7 +425,7 @@
                                 </a>
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail6'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
@@ -473,7 +447,7 @@
                                 <div class="product-action">
                                    
                                     <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a [routerLink]="'/detail7'" ><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="product-price">
@@ -482,19 +456,19 @@
                             </div>
                         </div>
                     </div>
-               
+
                 </div>
             </div>
         </div>
         <!-- Recent Product End -->
-        
-    
-        
 
-        
 
-     
-        
+
+
+
+
+
+
         <!-- Back to Top -->
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
       <!-- </body> -->
@@ -503,21 +477,21 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="assets/lib/easing/easing.min.js"></script>
         <script src="assets/lib/slick/slick.min.js"></script>
-        
+
         <!-- Template Javascript -->
         <script src="assets/js/main.js"></script>
-  
- 
+
+
  <!-- Footer -->
  <footer fxShow="true" fxHide.gt-sm="false" class="page-footer font-small unique-color-dark">
 
     <div class="icons-flag-container" style="background-color: #1A1A1A; height: 70px;">
-  
+
         <!-- Grid row-->
         <div class="row py-4 d-flex align-items-center">
-  
+
           <div class="col-md-6 col-lg-7 text-center text-md-right">
-  
+
               <div class="icons-footer">
                 <a mat-button [routerLink]="'/accounts'"><img src="../assets/twitter-16.png" class="fb-icon" alt=""> </a>
                 <a mat-button [routerLink]="'/create-account'"><img src="../assets/message-16.png" class="tw-icon" alt=""> </a>
@@ -530,25 +504,25 @@
                     <img width="20px" height="20px" src="../assets/tunisia.png" alt="">
                <select name="" id=""> <option value="">Tunisie</option><option value="">France</option></select>
                  <select name="" id=""><option value="">Français</option></select>
-  
+
           </div>
         </div>
     </div>
-  
+
     <!-- Footer Links -->
     <div   style="background-color: #2A2F46; margin-top: -1.5%; ">
-  
+
       <!-- Grid row -->
       <div class="row mt-3">
-  
+
         <!-- Grid column -->
-  
+
         <div class="col-md-2 col-lg-3 col-xl-2 mx-auto mb-4">
-  
-  
+
+
           <!-- Content -->
           <div>
-  
+
             <ul class="ul-liste" >
               <li>        <img src="../assets/daijaraIcon.png" width="70,162 px" alt="">
               </li>
@@ -557,11 +531,11 @@
            <li>à propos de nous</li>
            <li> imprimer </li>
           </ul></div>
-  
-  
+
+
         </div>
         <!-- Grid column -->
-  
+
         <!-- Grid column -->
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
          <div>
@@ -578,19 +552,19 @@
             </li>
            </ul>
           </div>
-  
-  
-  
+
+
+
         </div>
         <!-- Grid column -->
-  
+
         <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-  
+
           <!-- Links -->
           <div>
             <!-- Links -->
-  
+
             <ul class="ul-liste" >
   <br>
               <li>    <label class="footer-title"> Modes de paiement Daijara
@@ -603,15 +577,15 @@
               <li>Chargez mon compte Daijara </li>
              </ul>
             </div>
-  
-  
-  
+
+
+
         </div>
         <!-- Grid column -->
-  
+
         <!-- Grid column -->
         <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
-  
+
           <!-- Links -->
           <div>
             <!-- Links -->
@@ -628,17 +602,17 @@
               <li>Service Clients</li>
              </ul></div>
         </div>
-  
+
       </div>
       <!-- Grid row -->
-  
+
     </div>
     <!-- Footer Links -->
-  
+
     <!-- Copyright -->
       <!-- <mat-toolbar color="footerColor"  >
-  
-  
+
+
           <a mat-button [routerLink]="'/accounts'">  Nos conditions </a>
           <a mat-button [routerLink]="'/create-account'"> Protection des données </a>
           <a mat-button [routerLink]="'/contacts'">Imprimer </a>
@@ -646,9 +620,9 @@
           <a mat-button [routerLink]="'/activities'"> Remarques sur la publicité ciblée par centres d'intérét  </a>
           <a mat-button [routerLink]="'/create-activity'"> Copyright © diajara 2021  </a>
           <a mat-button [routerLink]="'/create-activity'">  Powered by TunaFanya </a>
-  
+
      </mat-toolbar> -->
     <!-- Copyright -->
-  
+
   </footer>
   <!-- Footer -->
