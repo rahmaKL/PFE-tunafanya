@@ -36,7 +36,7 @@ export class ClientComponent implements OnInit {
   errorMessage = '';
   isSuccessful = false;
   isSignUpFailed = false;
-
+  is_deleted: boolean = false;
   constructor(  private router:Router,
     private formBuilder: FormBuilder,
     private userService: UserServiceService,
