@@ -111,7 +111,7 @@ export class LoginComponent implements OnInit {
   }
   loginWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.router.navigate(['/profil'])
+    this.router.navigate(['/google'])
   }
 
   logOut(): void {

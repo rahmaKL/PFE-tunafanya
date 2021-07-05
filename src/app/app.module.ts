@@ -66,13 +66,15 @@ import { Fiche5Component } from './detail/fiche5/fiche5.component';
 import { Fiche6Component } from './detail/fiche6/fiche6.component';
 import { Fiche7Component } from './detail/fiche7/fiche7.component';
 import { Fiche8Component } from './detail/fiche8/fiche8.component';
+import { GoogleComponent } from './google/google.component';
 
 
 const Routes: Routes = [
 
   { path: '', component: CatalogComponent },
   { path: 'test', component: TestComponent },
-
+  { path: 'google', component: GoogleComponent },
+  
     { path: 'detail', component: FicheComponent },
     { path: 'detail1', component: Fiche2Component },
     { path: 'detail2', component: Fiche3Component },
@@ -180,7 +182,8 @@ const Routes: Routes = [
     Fiche5Component,
     Fiche6Component,
     Fiche7Component,
-    Fiche8Component
+    Fiche8Component,
+    GoogleComponent
 
 
   ],
@@ -216,7 +219,7 @@ const Routes: Routes = [
     NgxSpinnerModule,
     MDBBootstrapModule.forRoot(),
     NoopAnimationsModule,
- 
+
 
   ],
   providers: [UserServiceService, AdminGuard, LivreurGuard, SupGuard, ClientGuard,
