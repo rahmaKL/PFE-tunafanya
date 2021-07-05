@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { UserServiceService } from '../../services/user-service.service';
-import { Subject } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 export class Livreur {
   constructor(
@@ -26,20 +26,20 @@ export class Livreur {
   styleUrls: ['./notif-liv.component.scss']
 })
 export class NotifLivComponent implements OnInit {
-  editForm: FormGroup;
+  private titlee: string = 'Browser Push Notifications!';
+ 
   closeResult: string;
   title = 'datatables';
  dtOptions: DataTables.Settings = {};
- dtTrigger: Subject<any> = new Subject<any>();
  livs = [];
  dtElement: any;
 
- is_deleted: boolean = false;
-  deleteID: string;
-  editID:string;
-  httpClient: any;
-  constructor(private fb: FormBuilder, private http: HttpClient,private modalService: NgbModal ,private userService: UserServiceService) { }
 
+
+  httpClient: any;
+  constructor( private http: HttpClient,private modalService: NgbModal
+    ) {
+     }
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
@@ -55,8 +55,12 @@ getListliv(){
  .subscribe( response => {
    console.log(response);
    this.livs = response as any;
-   this.dtTrigger.next();
  });
   }
+
+   openWindowCustomClass(content) {
+    this.modalService.open(content, { windowClass: 'green-modal' });
+  }
+
  }
 
