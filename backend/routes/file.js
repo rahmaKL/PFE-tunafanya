@@ -271,22 +271,16 @@ router.put("/valide/:id",verifyToken, function (req, res) {
     }
   });
 });
-router.delete("/delete/:id", function (req, res) {
+router.get("/delete/:id", function (req, res) {
   let id = req.params.id;
-      doc_justificatifs.findOne(id, {
-      attributes: ["id"],
-      include: [{ model: Livreurs, attributes: ['id'], as: 'livreur'}],
-
-    }).then((file) => {
-
-      try {
+  doc_justificatifs.findByPk(id, { attributes: ["id"] }).then((file) => {
+    try {
       file.update({
         is_deleted: true,
-        updatedAt: new Date()
+
       });
       prepareResponse(res, 200, { success: true }, "application/json");
-      }
-      catch (error) {
+    } catch (error) {
       console.log(error);
       prepareResponse(res, 500, { success: false }, "application/json");
     }
