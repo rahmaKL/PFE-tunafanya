@@ -74,7 +74,7 @@ const Routes: Routes = [
   { path: '', component: CatalogComponent },
   { path: 'test', component: TestComponent },
   { path: 'google', component: GoogleComponent },
-  
+
     { path: 'detail', component: FicheComponent },
     { path: 'detail1', component: Fiche2Component },
     { path: 'detail2', component: Fiche3Component },
@@ -85,10 +85,6 @@ const Routes: Routes = [
     { path: 'detail7', component: Fiche8Component },
 
   { path: 'show', component: ShowComponent },
-  // {
-  //   // path: 'client', component: ProfilClientComponent, canActivate: [ClientGuard],
-  //   children: [,]
-  // },
   {
     path: 'sup', component: SupdashComponent, canActivate: [SupGuard],
     children: [
@@ -106,7 +102,7 @@ const Routes: Routes = [
   },
 
   {
-    path: 'admin', component: AdmindashComponent, canActivate: [AdminGuard],
+    path: 'admin', component: AdmindashComponent, canActivate: [AdminGuard,SupGuard],
     children: [
 
       { path: 'stock', component: CrudStockComponent },
@@ -118,7 +114,7 @@ const Routes: Routes = [
     ]
   },
   { path: 'login', component: LoginComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent},
   { path: 'register', component: RegisterComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'profil', component: ProfilComponent},
