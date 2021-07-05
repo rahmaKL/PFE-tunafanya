@@ -1,9 +1,9 @@
 <mat-toolbar color="primary"  >
   <mat-toolbar-row>
-    <img src="../assets/daijaraIcon.png" width=" 118,327px" alt="">
+    <img src="../assets/daijaraIcon.png" width=" 118,327px" alt="" href="'/login'">
     <div fxShow="true" fxHide.lt-md="true"  class="input-group">
       <input  type="text" class="form" placeholder="Tout nos catégories">
-     
+
 
     </div>
     <img width="20px" height="20px" src="../assets/user.png" alt="">
@@ -41,19 +41,17 @@
           <div class="account-settings">
             <div class="user-profile">
               <div>
-                <!-- <img class="brochure-poster" [src]="brochure.imageUrl" /> -->
-                <!-- <img src="{{ user.photoUrl }}"> -->
+
 
                 <img src="{{ user.photoUrl }}&access_token={{user.authToken}}" width="140px" >
-                 <!-- <img id="photoUrl" class="photoUrl" [src]="user.photoUrl"  width="140px"> -->
+
               </div>
 
-              <!-- <h5 class="name">{{ user.name }}</h5>
-              <h6 class="email">{{ user.email }}</h6> -->
+
             </div>
             <div class="aboutt">
-              <!-- <a  [routerLink]="'/profil/changepwd'"  style="color: #f08d5f"  >Modifier Mot de passe</a> -->
 
+              <button type="button" class="btn btn-danger" [routerLink]="'/login'" >Déconnexion</button>
 
             </div>
           </div>
