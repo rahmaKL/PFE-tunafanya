@@ -195,14 +195,14 @@
 
 
   <ng-template #content let-modal>
-    <div class="modal-header">
+    <div class="modal-header" *ngIf="!isSuccessful">
       <h4 class="modal-title" id="modal-basic-title">Ajouter Nouveau Produit</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate *ngIf="!isSuccessful">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate >
         <div class="form-group">
           <label for="libelle">Libelle</label>
           <div class="input-group">
