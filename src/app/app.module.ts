@@ -67,6 +67,7 @@ import { Fiche6Component } from './detail/fiche6/fiche6.component';
 import { Fiche7Component } from './detail/fiche7/fiche7.component';
 import { Fiche8Component } from './detail/fiche8/fiche8.component';
 import { GoogleComponent } from './google/google.component';
+import { Cart2Component } from './cart2/cart2.component';
 
 
 const Routes: Routes = [
@@ -74,6 +75,8 @@ const Routes: Routes = [
   { path: '', component: CatalogComponent },
   { path: 'test', component: TestComponent },
   { path: 'google', component: GoogleComponent },
+  { path: 'cartt', component: Cart2Component },
+
 
     { path: 'detail', component: FicheComponent },
     { path: 'detail1', component: Fiche2Component },
@@ -179,7 +182,8 @@ const Routes: Routes = [
     Fiche6Component,
     Fiche7Component,
     Fiche8Component,
-    GoogleComponent
+    GoogleComponent,
+    Cart2Component
 
 
   ],
